@@ -3,9 +3,10 @@
 	public class LetterCombinations
 	{
 		private readonly string[] buttons = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+		
 		public List<string> Combinations(string digits)
 		{
-			if (string.IsNullOrEmpty(digits))
+			if (string.IsNullOrEmpty(digits) || digits.Length > 4 || !digits.All(c => c >= '0' && c <= '9'))
 			{
 				return [];
 			}
